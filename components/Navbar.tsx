@@ -97,7 +97,7 @@ export function Navbar({ lang }: NavbarProps) {
                 <Link
                   key={key}
                   href={`${basePath}${href}`}
-                  className="px-4 py-3 text-slate-600 hover:text-teal-600 font-medium rounded-lg hover:bg-slate-100"
+                  className="flex items-center min-h-[44px] px-4 py-3 text-slate-600 hover:text-teal-600 font-medium rounded-lg hover:bg-slate-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t[key]}
@@ -107,7 +107,7 @@ export function Navbar({ lang }: NavbarProps) {
                 <LanguageSwitcher currentLang={lang} />
                 <Link
                   href={`/${lang}/portal/patient`}
-                  className="flex-1 text-center px-4 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl"
+                  className="flex-1 text-center min-h-[44px] flex items-center justify-center px-4 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl"
                 >
                   {t.login}
                 </Link>

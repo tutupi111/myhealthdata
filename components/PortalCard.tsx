@@ -12,7 +12,7 @@ interface PortalCardProps {
 export function PortalCard({ icon, title, description, href, accessLabel }: PortalCardProps) {
   return (
     <Link href={href} className="block h-full group">
-      <div className="h-full rounded-2xl border-2 border-slate-600/50 bg-slate-800/50 backdrop-blur-sm p-8 transition-all duration-300 hover:border-teal-400/60 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:-translate-y-1 flex flex-col">
+      <div className="h-full rounded-2xl border-2 border-slate-600/50 bg-slate-800/50 backdrop-blur-sm p-6 md:p-8 transition-all duration-300 hover:border-teal-400/60 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:-translate-y-1 flex flex-col">
         <div className="mb-6 inline-flex rounded-xl bg-teal-500/20 p-4 text-teal-400 transition-all duration-300 group-hover:scale-105">
           {icon}
         </div>

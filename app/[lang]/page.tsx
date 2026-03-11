@@ -43,20 +43,20 @@ export default async function HomePage({
       />
 
       {/* Health Data Problem - Light */}
-      <section className="relative py-20 md:py-28 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(15,23,42,0.02)_50%,transparent_100%)]" />
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-slate-900 mb-16 text-center">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-slate-900 mb-12 md:mb-16 text-center">
             {t.problem.title}
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.problem.items.map((item, i) => {
               const Icon = problemIcons[i];
               return (
                 <div
                   key={i}
-                  className="group relative rounded-2xl bg-white/80 backdrop-blur-sm border border-white/60 p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-teal-200/30 hover:-translate-y-2 hover:border-teal-200/60"
+                  className="group relative rounded-2xl bg-white/80 backdrop-blur-sm border border-white/60 p-6 md:p-8 shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-xl hover:shadow-teal-200/30 hover:-translate-y-2 hover:border-teal-200/60"
                 >
                   <div className="absolute top-0 left-6 right-6 h-0.5 rounded-full bg-gradient-to-r from-teal-500/60 to-cyan-500/60 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="mb-6 inline-flex rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 p-4 text-teal-600 shadow-sm transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] group-hover:scale-110">
@@ -76,7 +76,7 @@ export default async function HomePage({
       </section>
 
       {/* Future Vision - Dark */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
         <div
           className="absolute inset-0 opacity-[0.4]"
@@ -89,7 +89,7 @@ export default async function HomePage({
         <WorldMapOutline />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.02)_50%,transparent_100%)]" />
         <div className="relative max-w-4xl mx-auto text-center">
-          <h2 className="text-[36px] md:text-[40px] lg:text-[44px] font-bold text-white mb-8 leading-tight">
+          <h2 className="text-2xl md:text-[36px] lg:text-[44px] font-bold text-white mb-6 md:mb-8 leading-tight">
             {t.vision.title}
           </h2>
           <div className="relative inline-block">
@@ -102,7 +102,7 @@ export default async function HomePage({
       </section>
 
       {/* Global Impact - New Section */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900" />
         <div
           className="absolute inset-0 opacity-20"
@@ -113,10 +113,10 @@ export default async function HomePage({
         />
         <WorldMapOutline />
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-white mb-16 text-center">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-white mb-12 md:mb-16 text-center">
             {t.globalImpact.title}
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.globalImpact.stats.map((stat, i) => (
               <GlobalImpactCard key={i} value={stat.value} label={stat.label} />
             ))}
@@ -125,14 +125,14 @@ export default async function HomePage({
       </section>
 
       {/* What We Do - Light */}
-      <section className="relative py-20 md:py-28 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(15,23,42,0.02)_0%,transparent_50%,rgba(15,23,42,0.02)_100%)]" />
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-slate-900 mb-16 text-center">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-slate-900 mb-12 md:mb-16 text-center">
             {t.whatWeDo.title}
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <FeatureCard
               icon={<IconAI />}
               title={t.whatWeDo.cards[0].title}
@@ -153,7 +153,7 @@ export default async function HomePage({
       </section>
 
       {/* Platform Access - Dark */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
         <div
           className="absolute inset-0 opacity-20"
@@ -164,10 +164,10 @@ export default async function HomePage({
         />
         <WorldMapOutline />
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-white mb-4 text-center">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-white mb-4 text-center">
             {t.platformAccess.title}
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
             <PortalCard
               icon={<IconPatient />}
               title={t.platformAccess.patient.title}
@@ -194,14 +194,14 @@ export default async function HomePage({
       </section>
 
       {/* Featured Projects - Light */}
-      <section className="relative py-20 md:py-28 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(15,23,42,0.02)_50%,transparent_100%)]" />
         <div className="relative max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-slate-900 mb-16 text-center">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-slate-900 mb-12 md:mb-16 text-center">
             {t.projects.title}
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {t.projects.items.map((project, i) => (
               <ProjectCard
                 key={i}
@@ -215,7 +215,7 @@ export default async function HomePage({
       </section>
 
       {/* Open Source - Dark with code animation */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900" />
         <CodePatternBackground />
         <div
@@ -227,7 +227,7 @@ export default async function HomePage({
           }}
         />
         <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-[36px] md:text-[40px] font-bold text-white mb-8">
+          <h2 className="text-2xl md:text-[36px] lg:text-[40px] font-bold text-white mb-6 md:mb-8">
             {t.openSource.title}
           </h2>
           <p className="text-lg text-slate-300 leading-relaxed mb-12">
@@ -237,7 +237,7 @@ export default async function HomePage({
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl hover:bg-slate-100 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+            className="group inline-flex items-center justify-center min-h-[44px] gap-3 px-8 py-4 bg-white text-slate-900 font-semibold rounded-xl hover:bg-slate-100 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
           >
             <span className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(20,184,166,0.6)]">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -250,7 +250,7 @@ export default async function HomePage({
       </section>
 
       {/* Join the Movement - CTA Banner #0B1120 → #12345A */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-24 px-4 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
@@ -266,7 +266,7 @@ export default async function HomePage({
         />
         <WorldMapOutline />
         <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className="text-[40px] md:text-[48px] font-bold text-white mb-8 leading-tight">
+          <h2 className="text-2xl md:text-[40px] lg:text-[48px] font-bold text-white mb-6 md:mb-8 leading-tight">
             {t.joinMovement.title}
           </h2>
           <p className="text-xl text-slate-300 leading-relaxed mb-12">
@@ -274,7 +274,7 @@ export default async function HomePage({
           </p>
           <Link
             href={`/${lang}/join`}
-            className="inline-flex items-center gap-2 px-10 py-5 bg-teal-500 text-white font-semibold rounded-xl hover:bg-teal-400 transition-all duration-300 hover:shadow-[0_0_40px_rgba(20,184,166,0.4)] hover:-translate-y-1 text-lg"
+            className="inline-flex items-center justify-center min-h-[44px] gap-2 px-10 py-5 bg-teal-500 text-white font-semibold rounded-xl hover:bg-teal-400 transition-all duration-300 hover:shadow-[0_0_40px_rgba(20,184,166,0.4)] hover:-translate-y-1 text-base md:text-lg"
           >
             {t.joinMovement.cta}
             <span>→</span>
