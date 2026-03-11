@@ -12,17 +12,17 @@ interface PortalCardProps {
 export function PortalCard({ icon, title, description, href, accessLabel }: PortalCardProps) {
   return (
     <Link href={href} className="block h-full group">
-      <div className="h-full rounded-2xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-teal-100/50 hover:border-teal-200/80 hover:-translate-y-1 flex flex-col">
-        <div className="mb-6 inline-flex rounded-xl bg-gradient-to-br from-teal-50 to-blue-50 p-4 text-teal-600 transition-transform duration-300 group-hover:scale-105">
+      <div className="h-full rounded-2xl border-2 border-slate-600/50 bg-slate-800/50 backdrop-blur-sm p-8 transition-all duration-300 hover:border-teal-400/60 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:-translate-y-1 flex flex-col">
+        <div className="mb-6 inline-flex rounded-xl bg-teal-500/20 p-4 text-teal-400 transition-all duration-300 group-hover:scale-105">
           {icon}
         </div>
-        <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-teal-700 transition-colors">
+        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-teal-300 transition-colors">
           {title}
         </h3>
-        <p className="text-slate-600 text-sm flex-grow">{description}</p>
-        <span className="mt-6 inline-flex items-center text-teal-600 font-medium text-sm group-hover:gap-2 transition-all">
+        <p className="text-slate-400 text-sm flex-grow">{description}</p>
+        <span className="mt-6 inline-flex items-center text-teal-400 font-medium text-sm gap-2 group-hover:gap-4 transition-all duration-300">
           {accessLabel}
-          <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          <span className="group-hover:translate-x-1 transition-transform">→</span>
         </span>
       </div>
     </Link>

@@ -255,7 +255,7 @@ export function HeroNetworkBackground() {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ background: "#0a1628" }}
+        style={{ background: "#0B1120" }}
         aria-hidden
       />
     </div>

@@ -3,28 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --deep-blue: #0c4a6e;
-  --deep-blue-light: #0e7490;
+  --deep-navy: #0B1120;
+  --section-dark: #0f172a;
+  --section-light: #f8fafc;
   --teal-primary: #0d9488;
   --teal-dark: #0f766e;
   --teal-light: #14b8a6;
   --teal-muted: #5eead4;
   --blue-primary: #0369a1;
   --blue-light: #38bdf8;
-  --gradient-start: #f0f9ff;
-  --gradient-mid: #e0f2fe;
-  --gradient-end: #f0fdfa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-inter), system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 18px;
 }
