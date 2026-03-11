@@ -1,13 +1,10 @@
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-
-export default async function Page() {
-  const headersList = await headers();
-  const acceptLanguage = headersList.get("accept-language") || "";
-
-  if (acceptLanguage.startsWith("zh")) {
-    redirect("/zh");
-  }
-
-  redirect("/en");
+export default function Page() {
+  return (
+    <html>
+      <head>
+        <meta httpEquiv="refresh" content="0; url=/en" />
+      </head>
+      <body />
+    </html>
+  );
 }
