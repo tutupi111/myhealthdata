@@ -41,6 +41,15 @@ export const translations = {
       content:
         "We envision patient-controlled digital health infrastructure where every individual has full access to, understanding of, and sovereignty over their medical information.",
     },
+    globalImpact: {
+      title: "Global Impact",
+      stats: [
+        { value: "10K+", label: "Medical Records Structured" },
+        { value: "5", label: "Countries Collaborating" },
+        { value: "20+", label: "Research Contributors" },
+        { value: "Open", label: "Health Data Movement" },
+      ],
+    },
     whatWeDo: {
       title: "What We Do",
       cards: [
@@ -80,9 +89,9 @@ export const translations = {
     projects: {
       title: "Featured Projects",
       items: [
-        { name: "Medical Data Parser", description: "Parse and structure medical records for patient understanding." },
-        { name: "Patient Data Infrastructure", description: "Open infrastructure for patient-owned health data." },
-        { name: "AI Health Assistant", description: "AI-powered tools to interpret and explain medical information." },
+        { name: "Medical Data Parser", description: "Parse and structure medical records for patient understanding.", tag: "AI" },
+        { name: "Patient Data Infrastructure", description: "Open infrastructure for patient-owned health data.", tag: "Data Infrastructure" },
+        { name: "AI Health Assistant", description: "AI-powered tools to interpret and explain medical information.", tag: "Open Health" },
       ],
     },
     openSource: {
@@ -163,6 +172,15 @@ export const translations = {
       content:
         "我们设想患者控制的数字健康基础设施，让每个人都能充分访问、理解并完全掌控自己的医疗信息。",
     },
+    globalImpact: {
+      title: "全球影响",
+      stats: [
+        { value: "10K+", label: "医疗记录已结构化" },
+        { value: "5", label: "合作国家" },
+        { value: "20+", label: "研究贡献者" },
+        { value: "开放", label: "健康数据运动" },
+      ],
+    },
     whatWeDo: {
       title: "我们的工作",
       cards: [
@@ -202,9 +220,9 @@ export const translations = {
     projects: {
       title: "精选项目",
       items: [
-        { name: "医疗数据解析器", description: "解析和结构化医疗记录，便于患者理解。" },
-        { name: "患者数据基础设施", description: "患者拥有健康数据的开放基础设施。" },
-        { name: "AI 健康助手", description: "AI 驱动的工具，用于解读和解释医疗信息。" },
+        { name: "医疗数据解析器", description: "解析和结构化医疗记录，便于患者理解。", tag: "AI" },
+        { name: "患者数据基础设施", description: "患者拥有健康数据的开放基础设施。", tag: "Data Infrastructure" },
+        { name: "AI 健康助手", description: "AI 驱动的工具，用于解读和解释医疗信息。", tag: "Open Health" },
       ],
     },
     openSource: {

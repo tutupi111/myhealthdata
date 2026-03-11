@@ -22,6 +22,7 @@ export default async function ProjectsPage({
             key={i}
             name={project.name}
             description={project.description}
+            tag={project.tag}
           />
         ))}
       </div>
