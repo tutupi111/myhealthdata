@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionContainer } from "@/components/SectionContainer";
 import { translations, type Locale } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    alternates: { canonical: `/${lang}/join` },
+    openGraph: { url: `/${lang}/join` },
+  };
+}
 
 export default async function JoinPage({
   params,

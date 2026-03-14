@@ -19,6 +19,7 @@ export const translations = {
       join: "Join",
       contact: "Contact",
       login: "Login",
+      enterDashboard: "Enter Dashboard",
     },
     hero: {
       title: "Health Data Belongs to People",
@@ -136,8 +137,8 @@ export const translations = {
       email: "Contact",
     },
     portal: {
-      comingSoon: "Coming Soon",
-      description: "This portal will connect to the health data management system. Stay tuned.",
+      loginAtApp: "Log in at the platform to access your portal. Use the button below to sign in.",
+      goToLogin: "Log In",
       backToHome: "← Back to Home",
     },
   },
@@ -150,6 +151,7 @@ export const translations = {
       join: "加入我们",
       contact: "联系我们",
       login: "登录",
+      enterDashboard: "进入管理中心",
     },
     hero: {
       title: "健康数据属于每个人",
@@ -267,8 +269,8 @@ export const translations = {
       email: "联系我们",
     },
     portal: {
-      comingSoon: "即将推出",
-      description: "此门户将连接到健康数据管理系统。敬请期待。",
+      loginAtApp: "请登录平台以使用本门户。点击下方按钮前往登录。",
+      goToLogin: "去登录",
       backToHome: "← 返回首页",
     },
   },

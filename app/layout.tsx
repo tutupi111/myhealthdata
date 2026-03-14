@@ -7,7 +7,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+// Production canonical domain: https://www.myhealthdata.foundation — non-www redirect is in vercel.json
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.myhealthdata.foundation"),
   title: "MyDataHealth Foundation | Health Data Belongs to People",
   description:
     "MyDataHealth Foundation builds patient-centered health data infrastructure and AI tools that empower individuals to understand and control their medical data.",

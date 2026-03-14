@@ -8,6 +8,7 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
+// Canonical domain is www; non-www must permanently redirect to www (see vercel.json).
 export async function generateMetadata({
   params,
 }: {
@@ -15,6 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const isZh = lang === "zh";
+  const canonicalPath = `/${lang}`;
   return {
     title: isZh
       ? "MyDataHealth Foundation | 健康数据属于每个人"
@@ -23,10 +25,14 @@ export async function generateMetadata({
       ? "MyDataHealth Foundation 构建以患者为中心的健康数据基础设施和 AI 工具。"
       : "MyDataHealth Foundation builds patient-centered health data infrastructure and AI tools.",
     alternates: {
+      canonical: canonicalPath,
       languages: {
         en: "/en",
         "zh-Hans": "/zh",
       },
+    },
+    openGraph: {
+      url: canonicalPath,
     },
   };
 }

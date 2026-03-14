@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionContainer } from "@/components/SectionContainer";
 import { translations, type Locale } from "@/lib/i18n";
+import { getAppLoginUrl } from "@/lib/config";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    alternates: { canonical: `/${lang}/portal/admin` },
+    openGraph: { url: `/${lang}/portal/admin` },
+  };
+}
 
 export default async function AdminPortalPage({
   params,
@@ -13,19 +27,24 @@ export default async function AdminPortalPage({
   return (
     <SectionContainer className="py-20">
       <div className="max-w-2xl mx-auto text-center">
-        <span className="inline-block px-4 py-1 bg-teal-100 text-teal-700 text-sm font-medium rounded-full mb-6">
-          {t.portal.comingSoon}
-        </span>
         <h1 className="text-3xl font-bold text-slate-800 mb-4">
           {t.platformAccess.admin.title}
         </h1>
-        <p className="text-slate-600 mb-8">{t.portal.description}</p>
-        <Link
-          href={`/${lang}`}
-          className="text-teal-600 font-medium hover:text-teal-700"
-        >
-          {t.portal.backToHome}
-        </Link>
+        <p className="text-slate-600 mb-8">{t.portal.loginAtApp}</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={getAppLoginUrl("admin")}
+            className="inline-flex items-center justify-center px-8 py-3 bg-teal-600 text-white font-semibold rounded-xl hover:bg-teal-700 transition-colors"
+          >
+            {t.portal.goToLogin}
+          </a>
+          <Link
+            href={`/${lang}`}
+            className="text-teal-600 font-medium hover:text-teal-700"
+          >
+            {t.portal.backToHome}
+          </Link>
+        </div>
       </div>
     </SectionContainer>
   );

@@ -1,9 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { translations, type Locale } from "@/lib/i18n";
+import { getAppLoginUrl, getAppDashboardUrl, LOGGED_IN_COOKIE_NAME } from "@/lib/config";
+
+function hasLoggedInCookie(): boolean {
+  if (typeof document === "undefined") return false;
+  return document.cookie.split(";").some((c) => c.trim().startsWith(`${LOGGED_IN_COOKIE_NAME}=`));
+}
 
 const navItems = [
   { key: "home" as const, href: "" },
@@ -20,8 +26,13 @@ interface NavbarProps {
 
 export function Navbar({ lang }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const t = translations[lang].nav;
   const basePath = `/${lang}`;
+
+  useEffect(() => {
+    setIsLoggedIn(hasLoggedInCookie());
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
@@ -48,12 +59,25 @@ export function Navbar({ lang }: NavbarProps) {
 
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-slate-200">
               <LanguageSwitcher currentLang={lang} />
-              <Link
-                href={`/${lang}/portal/patient`}
-                className="px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-all duration-200 hover:shadow-md"
-              >
-                {t.login}
-              </Link>
+              {isLoggedIn ? (
+                <a
+                  href={getAppDashboardUrl()}
+                  className="px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-all duration-200 hover:shadow-md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.enterDashboard}
+                </a>
+              ) : (
+                <a
+                  href={getAppLoginUrl("patient")}
+                  className="px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-all duration-200 hover:shadow-md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.login}
+                </a>
+              )}
             </div>
           </div>
 
@@ -105,12 +129,25 @@ export function Navbar({ lang }: NavbarProps) {
               ))}
               <div className="flex items-center gap-4 pt-4 mt-4 border-t border-slate-200">
                 <LanguageSwitcher currentLang={lang} />
-                <Link
-                  href={`/${lang}/portal/patient`}
-                  className="flex-1 text-center min-h-[44px] flex items-center justify-center px-4 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl"
-                >
-                  {t.login}
-                </Link>
+                {isLoggedIn ? (
+                  <a
+                    href={getAppDashboardUrl()}
+                    className="flex-1 text-center min-h-[44px] flex items-center justify-center px-4 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.enterDashboard}
+                  </a>
+                ) : (
+                  <a
+                    href={getAppLoginUrl("patient")}
+                    className="flex-1 text-center min-h-[44px] flex items-center justify-center px-4 py-3 bg-teal-600 text-white text-sm font-semibold rounded-xl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.login}
+                  </a>
+                )}
               </div>
             </div>
           </div>

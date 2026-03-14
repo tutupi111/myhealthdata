@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { SectionContainer } from "@/components/SectionContainer";
 import { translations, type Locale } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    alternates: { canonical: `/${lang}/contact` },
+    openGraph: { url: `/${lang}/contact` },
+  };
+}
 
 export default async function ContactPage({
   params,

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { SectionContainer } from "@/components/SectionContainer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { translations, type Locale } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    alternates: { canonical: `/${lang}/projects` },
+    openGraph: { url: `/${lang}/projects` },
+  };
+}
 
 export default async function ProjectsPage({
   params,
