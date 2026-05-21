@@ -115,7 +115,7 @@ export const translations = {
       title: "Open Source",
       content:
         "We believe in transparency and collaboration. Our open source projects invite developers worldwide to build trustworthy health technology together.",
-      cta: "View on GitHub",
+      cta: "Get Involved",
     },
     joinMovement: {
       title: "Join the Movement",
@@ -166,7 +166,6 @@ export const translations = {
     footer: {
       description: "Patient-centered health data infrastructure. Health data belongs to people.",
       copyright: "© 2026 MyDataHealth Foundation. All rights reserved.",
-      github: "GitHub",
       email: "Contact",
       platform: "Platform",
       resources: "Resources",
@@ -296,7 +295,7 @@ export const translations = {
       title: "开源",
       content:
         "我们相信透明与协作。我们的开源项目邀请全球开发者共同构建可信赖的健康技术。",
-      cta: "在 GitHub 查看",
+      cta: "参与其中",
     },
     joinMovement: {
       title: "加入运动",
@@ -343,7 +342,6 @@ export const translations = {
     footer: {
       description: "以患者为中心的健康数据基础设施。健康数据属于每个人。",
       copyright: "© 2026 MyDataHealth Foundation。保留所有权利。",
-      github: "GitHub",
       email: "联系我们",
       platform: "平台",
       resources: "资源",

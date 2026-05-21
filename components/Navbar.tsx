@@ -15,7 +15,7 @@ const navItems = [
   { key: "home" as const, href: "" },
   { key: "platform" as const, href: "/projects" },
   { key: "useCases" as const, href: "/research" },
-  { key: "docs" as const, href: "https://github.com", external: true },
+  { key: "docs" as const, href: "/research" },
   { key: "about" as const, href: "/mission" },
   { key: "openSource" as const, href: "#open-source" },
 ] as const;
@@ -47,28 +47,9 @@ export function Navbar({ lang }: NavbarProps) {
     setIsLoggedIn(hasLoggedInCookie());
   }, []);
 
-  const renderNavLink = (
-    key: (typeof navItems)[number]["key"],
-    href: string,
-    external?: boolean,
-  ) => {
+  const renderNavLink = (key: (typeof navItems)[number]["key"], href: string) => {
     const className =
       "px-3 py-2 text-sm text-slate-300 hover:text-white font-medium rounded-lg hover:bg-white/5 transition-all duration-200";
-
-    if (external) {
-      return (
-        <a
-          key={key}
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {t[key]}
-        </a>
-      );
-    }
-
     const linkHref = href.startsWith("#") ? `${basePath}${href}` : `${basePath}${href}`;
 
     return (
@@ -87,9 +68,7 @@ export function Navbar({ lang }: NavbarProps) {
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map(({ key, href, ...rest }) =>
-              renderNavLink(key, href, "external" in rest && rest.external),
-            )}
+            {navItems.map(({ key, href }) => renderNavLink(key, href))}
 
             <div className="flex items-center gap-2 ml-4 pl-4 border-l border-white/10">
               <LanguageSwitcher currentLang={lang} variant="dark" />
@@ -140,15 +119,12 @@ export function Navbar({ lang }: NavbarProps) {
         {mobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-white/10">
             <div className="flex flex-col gap-1">
-              {navItems.map(({ key, href, ...rest }) => (
+              {navItems.map(({ key, href }) => (
                 <Link
                   key={key}
-                  href={href.startsWith("#") ? `${basePath}${href}` : href.startsWith("http") ? href : `${basePath}${href}`}
+                  href={href.startsWith("#") ? `${basePath}${href}` : `${basePath}${href}`}
                   className="flex items-center min-h-[44px] px-4 py-3 text-slate-300 hover:text-white font-medium rounded-lg hover:bg-white/5"
                   onClick={() => setMobileMenuOpen(false)}
-                  {...("external" in rest && rest.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
                 >
                   {t[key]}
                 </Link>
