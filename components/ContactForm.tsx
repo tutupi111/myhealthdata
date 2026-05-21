@@ -8,7 +8,7 @@ interface ContactFormProps {
   lang: Locale;
 }
 
-type FormStatus = "idle" | "submitting" | "success" | "error";
+type FormStatus = "idle" | "submitting" | "success" | "error" | "config_error";
 
 export function ContactForm({ lang }: ContactFormProps) {
   const t = translations[lang].contactPage;
@@ -34,14 +34,20 @@ export function ContactForm({ lang }: ContactFormProps) {
       },
     });
 
-    setStatus(result.ok ? "success" : "error");
-
     if (result.ok) {
+      setStatus("success");
       setName("");
       setEmail("");
       setSubject("");
       setMessage("");
+      return;
     }
+
+    setStatus(
+      result.status === 503 || result.code === "missing_credentials"
+        ? "config_error"
+        : "error",
+    );
   };
 
   const inputClassName =
@@ -57,6 +63,15 @@ export function ContactForm({ lang }: ContactFormProps) {
           className="mb-6 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 text-teal-800"
         >
           {t.formSuccess}
+        </div>
+      )}
+
+      {status === "config_error" && (
+        <div
+          role="alert"
+          className="mb-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-amber-900"
+        >
+          {t.formErrorConfig}
         </div>
       )}
 

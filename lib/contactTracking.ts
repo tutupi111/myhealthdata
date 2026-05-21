@@ -24,7 +24,7 @@ export async function trackContactEvent(params: {
   contactTarget?: string;
   campaign?: string;
   metadata?: Record<string, unknown>;
-}): Promise<{ ok: boolean; id?: string }> {
+}): Promise<{ ok: boolean; id?: string; status?: number; code?: string }> {
   const body = {
     channel: params.channel,
     contact_target: params.contactTarget,
@@ -47,10 +47,12 @@ export async function trackContactEvent(params: {
       body: JSON.stringify(body),
       keepalive: true,
     });
-    if (!res.ok) return { ok: false };
-    const data = (await res.json()) as { id?: string };
+    const data = (await res.json()) as { id?: string; code?: string };
+    if (!res.ok) {
+      return { ok: false, status: res.status, code: data.code };
+    }
     return { ok: true, id: data.id };
   } catch {
-    return { ok: false };
+    return { ok: false, status: 0, code: "network_error" };
   }
 }

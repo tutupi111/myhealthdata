@@ -144,6 +144,8 @@ export const translations = {
         "Thank you! We've received your message and will get back to you soon.",
       formError:
         "Something went wrong. Please try again or email us directly.",
+      formErrorConfig:
+        "The contact form is not configured on the server yet. Please email us directly, or ask the site admin to set DATA_HUB_APP_ID and DATA_HUB_API_KEY on Vercel and redeploy.",
     },
     footer: {
       description: "Patient-centered health data infrastructure and AI tools. Health data belongs to patients.",
@@ -288,6 +290,8 @@ export const translations = {
       formSubmitting: "发送中...",
       formSuccess: "感谢您的留言！我们已收到您的信息，会尽快与您联系。",
       formError: "提交失败，请稍后重试或直接发送邮件联系我们。",
+      formErrorConfig:
+        "服务器尚未配置联系表单。请直接发送邮件联系我们，或在 Vercel 中设置 DATA_HUB_APP_ID、DATA_HUB_API_KEY 后重新部署。",
     },
     footer: {
       description: "以患者为中心的健康数据基础设施和 AI 工具。健康数据属于患者。",
