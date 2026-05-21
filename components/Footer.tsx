@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactEmailLink } from "@/components/ContactEmailLink";
 import { translations, type Locale } from "@/lib/i18n";
 
 const footerLinks = [
@@ -69,12 +70,11 @@ export function Footer({ lang }: FooterProps) {
                 </svg>
                 {t.footer.github}
               </a>
-              <Link
-                href={`${basePath}/contact`}
-                className="text-slate-400 hover:text-teal-400 transition-colors"
-              >
-                {t.footer.email}
-              </Link>
+              <ContactEmailLink
+                contactTarget="footer-email"
+                campaign="footer"
+                className="text-slate-400 hover:text-teal-400 font-normal"
+              />
             </div>
           </div>
         </div>

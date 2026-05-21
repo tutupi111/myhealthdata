@@ -128,7 +128,22 @@ export const translations = {
     },
     contactPage: {
       title: "Contact",
-      intro: "Get in touch with the MyDataHealth Foundation team.",
+      intro: "Get in touch with the MyDataHealth Foundation team. We'd love to hear from you.",
+      emailLabel: "Email",
+      emailHint: "We typically respond within 2–3 business days.",
+      formTitle: "Send us a message",
+      formName: "Name",
+      formEmail: "Your email",
+      formSubject: "Subject",
+      formMessage: "Message",
+      formPrivacy:
+        "Your information will only be used to respond to your inquiry.",
+      formSubmit: "Send message",
+      formSubmitting: "Sending...",
+      formSuccess:
+        "Thank you! We've received your message and will get back to you soon.",
+      formError:
+        "Something went wrong. Please try again or email us directly.",
     },
     footer: {
       description: "Patient-centered health data infrastructure and AI tools. Health data belongs to patients.",
@@ -260,7 +275,19 @@ export const translations = {
     },
     contactPage: {
       title: "联系我们",
-      intro: "与 MyDataHealth Foundation 团队取得联系。",
+      intro: "欢迎与 MyDataHealth Foundation 团队取得联系，我们期待听到您的声音。",
+      emailLabel: "联系邮箱",
+      emailHint: "我们通常会在 2–3 个工作日内回复。",
+      formTitle: "发送留言",
+      formName: "姓名",
+      formEmail: "您的邮箱",
+      formSubject: "主题",
+      formMessage: "留言内容",
+      formPrivacy: "您提供的信息仅用于回复您的咨询。",
+      formSubmit: "发送留言",
+      formSubmitting: "发送中...",
+      formSuccess: "感谢您的留言！我们已收到您的信息，会尽快与您联系。",
+      formError: "提交失败，请稍后重试或直接发送邮件联系我们。",
     },
     footer: {
       description: "以患者为中心的健康数据基础设施和 AI 工具。健康数据属于患者。",

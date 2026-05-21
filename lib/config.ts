@@ -22,3 +22,6 @@ export function getAppLoginUrl(role: AppRole): string {
 export function getAppDashboardUrl(): string {
   return APP_BASE_URL;
 }
+
+/** Public contact email shown on the website */
+export const CONTACT_EMAIL = "hugchen1117@gmail.com";
