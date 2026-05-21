@@ -1,53 +1,78 @@
 import Link from "next/link";
-import { HeroNetworkBackground } from "./HeroNetworkBackground";
+import { HeroIllustration } from "./HeroIllustration";
 
 interface HeroSectionProps {
-  title: string;
+  badges: readonly string[];
+  titlePrefix: string;
+  titleHighlight: string;
   subtitle: string;
-  ctaMission: string;
-  ctaProjects: string;
+  ctaLearnMore: string;
+  ctaExploreDocs: string;
   missionHref: string;
   projectsHref: string;
 }
 
 export function HeroSection({
-  title,
+  badges,
+  titlePrefix,
+  titleHighlight,
   subtitle,
-  ctaMission,
-  ctaProjects,
+  ctaLearnMore,
+  ctaExploreDocs,
   missionHref,
   projectsHref,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
-      <HeroNetworkBackground />
+    <section className="relative overflow-hidden bg-[#0a0e14]">
+      <div className="absolute inset-0 hero-glow pointer-events-none" />
+      <div className="absolute inset-0 section-grid-dark opacity-40 pointer-events-none" />
 
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ backgroundColor: "rgba(11, 17, 32, 0.65)" }}
-      />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 md:pt-16 md:pb-28">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <div className="text-left">
+            <div className="flex flex-wrap gap-2 mb-6">
+              {badges.map((badge) => (
+                <span
+                  key={badge}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-teal-300 bg-teal-400/10 border border-teal-400/20"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
 
-      <div className="relative z-10 w-full max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h1 className="text-3xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-lg">
-          {title}
-        </h1>
-        <p className="mt-6 md:mt-8 text-base md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-xl mx-auto">
-          {subtitle}
-        </p>
-        <div className="mt-10 md:mt-14 flex flex-col md:flex-row gap-4 justify-center">
-          <Link
-            href={missionHref}
-            className="group inline-flex items-center justify-center min-h-[44px] px-8 py-4 bg-teal-500 text-white font-semibold rounded-xl hover:bg-teal-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:-translate-y-0.5"
-          >
-            {ctaMission}
-            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-          <Link
-            href={projectsHref}
-            className="inline-flex items-center justify-center min-h-[44px] px-8 py-4 border-2 border-slate-400/60 text-white font-semibold rounded-xl hover:border-teal-400/80 hover:bg-white/5 hover:shadow-[0_0_20px_rgba(20,184,166,0.2)] transition-all duration-300"
-          >
-            {ctaProjects}
-          </Link>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight">
+              {titlePrefix}{" "}
+              <span className="text-[#00d1b2]">{titleHighlight}</span>
+            </h1>
+
+            <p className="mt-6 text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl">
+              {subtitle}
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <Link
+                href={missionHref}
+                className="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 bg-[#00d1b2] text-[#0a0e14] font-semibold rounded-full hover:bg-[#2dd4bf] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,209,178,0.35)]"
+              >
+                {ctaLearnMore}
+              </Link>
+              <Link
+                href={projectsHref}
+                className="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 border border-slate-500/60 text-white font-semibold rounded-full hover:border-teal-400/70 hover:bg-white/5 transition-all duration-300"
+              >
+                {ctaExploreDocs}
+              </Link>
+            </div>
+          </div>
+
+          <div className="hidden lg:block">
+            <HeroIllustration />
+          </div>
+        </div>
+
+        <div className="lg:hidden mt-8 max-w-sm mx-auto">
+          <HeroIllustration />
         </div>
       </div>
     </section>

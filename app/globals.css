@@ -3,15 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --deep-navy: #0B1120;
-  --section-dark: #0f172a;
-  --section-light: #f8fafc;
-  --teal-primary: #0d9488;
+  --deep-navy: #0a0e14;
+  --deep-navy-light: #111827;
+  --section-dark: #0a0e14;
+  --section-light: #f8f9fa;
+  --teal-primary: #00d1b2;
   --teal-dark: #0f766e;
-  --teal-light: #14b8a6;
+  --teal-light: #2dd4bf;
   --teal-muted: #5eead4;
-  --blue-primary: #0369a1;
-  --blue-light: #38bdf8;
+  --card-dark: #111827;
 }
 
 @theme inline {
@@ -25,5 +25,55 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.mesh-gradient {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 209, 178, 0.25), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.15), transparent 40%),
+    linear-gradient(135deg, #0a0e14 0%, #0f2847 50%, #0a0e14 100%);
+}
+
+.hero-glow {
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(0, 209, 178, 0.18) 0%,
+    transparent 55%
+  );
+}
+
+.section-grid-dark {
+  background-image:
+    linear-gradient(rgba(0, 209, 178, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 209, 178, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
 }

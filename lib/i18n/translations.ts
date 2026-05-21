@@ -13,6 +13,12 @@ export const translations = {
   en: {
     nav: {
       home: "Home",
+      platform: "Platform",
+      useCases: "Use Cases",
+      docs: "Docs",
+      about: "About",
+      openSource: "Open Source",
+      joinMovement: "Join the Movement",
       mission: "Mission",
       projects: "Projects",
       research: "Research",
@@ -22,19 +28,22 @@ export const translations = {
       enterDashboard: "Enter Dashboard",
     },
     hero: {
-      title: "Health Data Belongs to People",
+      badges: ["Secure", "Private", "Decentralized"],
+      titlePrefix: "Health Data Belongs to",
+      titleHighlight: "People.",
       subtitle:
-        "So everyone can understand their health, care for themselves, and contribute to better medicine.",
-      ctaMission: "Explore Mission",
-      ctaProjects: "View Projects",
+        "Our privacy-first platform puts health data ownership back to individuals.",
+      ctaLearnMore: "Learn More",
+      ctaExploreDocs: "Explore Docs",
     },
     problem: {
       title: "The Health Data Problem",
+      subtitle: "Patients lack control over their most personal information.",
       items: [
-        { title: "Fragmented", description: "Health data is scattered across countless institutions and systems." },
-        { title: "Locked Away", description: "Data remains trapped inside hospitals and healthcare providers." },
-        { title: "Hard to Access", description: "Patients struggle to obtain their own medical records." },
-        { title: "Impossible to Understand", description: "Clinical jargon makes data nearly incomprehensible." },
+        { title: "Lack of Ownership", description: "Individuals rarely own or control copies of their own health records." },
+        { title: "Privacy Risks", description: "Sensitive data is shared across systems without clear consent or transparency." },
+        { title: "Limited Access", description: "Patients struggle to obtain, understand, and use their medical information." },
+        { title: "Data Silos", description: "Health data remains fragmented across hospitals, apps, and institutions." },
       ],
     },
     vision: {
@@ -45,66 +54,73 @@ export const translations = {
     globalImpact: {
       title: "Global Impact",
       stats: [
-        { value: "10K+", label: "Medical Records Structured" },
-        { value: "5", label: "Countries Collaborating" },
-        { value: "20+", label: "Research Contributors" },
-        { value: "Open", label: "Health Data Movement" },
+        { value: "100K+", label: "Users" },
+        { value: "5", label: "Countries" },
+        { value: "30+", label: "Health Partners" },
+        { value: "Open", label: "Source" },
       ],
     },
     whatWeDo: {
       title: "What We Do",
+      subtitle: "Building infrastructure that empowers individuals and researchers alike.",
       cards: [
         {
-          title: "AI Medical Record Understanding",
+          title: "Build & Empower",
           description:
-            "AI tools that translate complex medical reports into understandable insights for individuals.",
+            "Tools and infrastructure that help individuals understand, manage, and benefit from their health data.",
         },
         {
-          title: "Patient Data Ownership",
+          title: "Enable Privacy-Preserving Use",
           description:
-            "Advocating open infrastructure where individuals truly control their health data.",
+            "Secure, consent-driven data sharing that protects privacy while enabling meaningful collaboration.",
         },
         {
-          title: "Open Health Research",
+          title: "Drive Patient-Centric AI",
           description:
-            "Supporting open science collaboration in digital health and medical AI.",
+            "AI systems designed to translate complex medical information into clear, actionable insights.",
         },
       ],
     },
     platformAccess: {
       title: "Access the Platform",
+      subtitle: "Choose the portal that fits your role.",
       patient: {
-        title: "Patient Portal",
-        description: "Access your personal health data and AI tools.",
+        title: "For Individuals",
+        description: "Access your personal health data, records, and AI-powered insights.",
+        cta: "Get Started",
       },
       researcher: {
-        title: "Researcher Portal",
-        description: "Access research datasets and collaboration tools.",
+        title: "For Researchers",
+        description: "Collaborate on privacy-preserving datasets and open health research.",
+        cta: "Join Research",
       },
       admin: {
-        title: "Admin Portal",
-        description: "System governance and data management.",
+        title: "For Organizations",
+        description: "Governance, administration, and system management for partner institutions.",
+        cta: "Contact Us",
       },
       accessPortal: "Access Portal",
     },
     projects: {
       title: "Featured Projects",
+      subtitle: "Open tools advancing patient-centered health data.",
+      viewProject: "View Project",
       items: [
         { name: "Medical Data Parser", description: "Parse and structure medical records for patient understanding.", tag: "AI" },
-        { name: "Patient Data Infrastructure", description: "Open infrastructure for patient-owned health data.", tag: "Data Infrastructure" },
+        { name: "Patient Data Infrastructure", description: "Open infrastructure for patient-owned health data.", tag: "Infrastructure" },
         { name: "AI Health Assistant", description: "AI-powered tools to interpret and explain medical information.", tag: "Open Health" },
       ],
     },
     openSource: {
       title: "Open Source",
       content:
-        "The foundation supports open source health technology. We believe that transparency and collaboration are essential for building trustworthy systems that serve patients.",
+        "We believe in transparency and collaboration. Our open source projects invite developers worldwide to build trustworthy health technology together.",
       cta: "View on GitHub",
     },
     joinMovement: {
       title: "Join the Movement",
       content:
-        "We invite developers, clinicians, researchers, and organizations to collaborate with us. Together we can build a patient-centered health data ecosystem.",
+        "Be part of the global effort to return health data ownership to individuals.",
       cta: "Get Involved",
     },
     mission: {
@@ -148,10 +164,30 @@ export const translations = {
         "The contact form is not configured on the server yet. Please email us directly, or ask the site admin to set DATA_HUB_APP_ID and DATA_HUB_API_KEY on Vercel and redeploy.",
     },
     footer: {
-      description: "Patient-centered health data infrastructure and AI tools. Health data belongs to patients.",
-      copyright: "© 2025 MyDataHealth Foundation. All rights reserved.",
+      description: "Patient-centered health data infrastructure. Health data belongs to people.",
+      copyright: "© 2026 MyDataHealth Foundation. All rights reserved.",
       github: "GitHub",
       email: "Contact",
+      platform: "Platform",
+      resources: "Resources",
+      about: "About",
+      privacyPolicy: "Privacy Policy",
+      termsOfUse: "Terms of Use",
+      platformLinks: {
+        individuals: "For Individuals",
+        researchers: "For Researchers",
+        organizations: "For Organizations",
+      },
+      resourceLinks: {
+        docs: "Documentation",
+        openSource: "Open Source",
+        contact: "Contact Us",
+      },
+      aboutLinks: {
+        mission: "Our Mission",
+        projects: "Projects",
+        join: "Join Us",
+      },
     },
     portal: {
       loginAtApp: "Log in at the platform to access your portal. Use the button below to sign in.",
@@ -162,28 +198,36 @@ export const translations = {
   zh: {
     nav: {
       home: "首页",
+      platform: "平台",
+      useCases: "应用场景",
+      docs: "文档",
+      about: "关于",
+      openSource: "开源",
+      joinMovement: "加入我们",
       mission: "使命",
       projects: "项目",
       research: "研究",
-      join: "加入我们",
+      join: "加入",
       contact: "联系我们",
       login: "登录",
       enterDashboard: "进入管理中心",
     },
     hero: {
-      title: "健康数据属于每个人",
-      subtitle:
-        "让每个人都能理解自己的健康、照顾好自己，并为更好的医学做出贡献。",
-      ctaMission: "了解使命",
-      ctaProjects: "查看项目",
+      badges: ["安全", "隐私", "去中心化"],
+      titlePrefix: "健康数据属于",
+      titleHighlight: "每个人。",
+      subtitle: "我们的隐私优先平台，将健康数据所有权归还个人。",
+      ctaLearnMore: "了解更多",
+      ctaExploreDocs: "探索文档",
     },
     problem: {
       title: "健康数据问题",
+      subtitle: "患者对自己最私密的信息缺乏掌控。",
       items: [
-        { title: "数据分散", description: "健康数据分散在无数机构和系统中。" },
-        { title: "被锁住", description: "数据被困在医院和医疗提供者手中。" },
-        { title: "难以获取", description: "患者难以获取自己的医疗记录。" },
-        { title: "难以理解", description: "医学术语使数据几乎无法理解。" },
+        { title: "缺乏所有权", description: "个人很少真正拥有或控制一份完整的健康数据副本。" },
+        { title: "隐私风险", description: "敏感数据在缺乏明确同意的情况下被跨系统共享。" },
+        { title: "获取受限", description: "患者难以获取、理解并使用自己的医疗信息。" },
+        { title: "数据孤岛", description: "健康数据分散在医院、应用和各类机构之间。" },
       ],
     },
     vision: {
@@ -194,66 +238,69 @@ export const translations = {
     globalImpact: {
       title: "全球影响",
       stats: [
-        { value: "10K+", label: "医疗记录已结构化" },
+        { value: "100K+", label: "用户" },
         { value: "5", label: "合作国家" },
-        { value: "20+", label: "研究贡献者" },
-        { value: "开放", label: "健康数据运动" },
+        { value: "30+", label: "健康合作伙伴" },
+        { value: "开源", label: "开放运动" },
       ],
     },
     whatWeDo: {
       title: "我们的工作",
+      subtitle: "构建赋能个人与研究人员的基础设施。",
       cards: [
         {
-          title: "AI 医疗记录理解",
-          description:
-            "将复杂医疗报告转化为个人可理解洞察的 AI 工具。",
+          title: "构建与赋能",
+          description: "帮助个人理解、管理并从健康数据中受益的工具与基础设施。",
         },
         {
-          title: "患者数据所有权",
-          description:
-            "倡导个人真正控制其健康数据的开放基础设施。",
+          title: "隐私保护的数据使用",
+          description: "安全、基于同意的数据共享，在保护隐私的同时实现有意义的协作。",
         },
         {
-          title: "开放健康研究",
-          description:
-            "支持数字健康和医疗 AI 领域的开放科学协作。",
+          title: "驱动以患者为中心的 AI",
+          description: "将复杂医疗信息转化为清晰、可行动洞察的 AI 系统。",
         },
       ],
     },
     platformAccess: {
       title: "平台入口",
+      subtitle: "选择适合您角色的入口。",
       patient: {
-        title: "患者门户",
-        description: "访问您的个人健康数据和 AI 工具。",
+        title: "个人用户",
+        description: "访问您的个人健康数据、医疗记录和 AI 洞察。",
+        cta: "立即开始",
       },
       researcher: {
-        title: "研究者门户",
-        description: "访问研究数据集和协作工具。",
+        title: "研究人员",
+        description: "在隐私保护的数据集上协作，推动开放健康研究。",
+        cta: "加入研究",
       },
       admin: {
-        title: "管理门户",
-        description: "系统治理和数据管理。",
+        title: "组织机构",
+        description: "合作机构的治理、管理与系统运维。",
+        cta: "联系我们",
       },
       accessPortal: "进入门户",
     },
     projects: {
       title: "精选项目",
+      subtitle: "推动以患者为中心健康数据的开放工具。",
+      viewProject: "查看项目",
       items: [
         { name: "医疗数据解析器", description: "解析和结构化医疗记录，便于患者理解。", tag: "AI" },
-        { name: "患者数据基础设施", description: "患者拥有健康数据的开放基础设施。", tag: "Data Infrastructure" },
-        { name: "AI 健康助手", description: "AI 驱动的工具，用于解读和解释医疗信息。", tag: "Open Health" },
+        { name: "患者数据基础设施", description: "患者拥有健康数据的开放基础设施。", tag: "基础设施" },
+        { name: "AI 健康助手", description: "AI 驱动的工具，用于解读和解释医疗信息。", tag: "开放健康" },
       ],
     },
     openSource: {
       title: "开源",
       content:
-        "基金会支持开源健康技术。我们相信透明和协作对于构建服务于患者的可信系统至关重要。",
+        "我们相信透明与协作。我们的开源项目邀请全球开发者共同构建可信赖的健康技术。",
       cta: "在 GitHub 查看",
     },
     joinMovement: {
-      title: "加入我们",
-      content:
-        "我们邀请开发者、临床医生、研究人员和组织与我们合作。共同构建以患者为中心的健康数据生态系统。",
+      title: "加入运动",
+      content: "成为全球健康数据所有权回归个人努力的一部分。",
       cta: "参与其中",
     },
     mission: {
@@ -294,10 +341,30 @@ export const translations = {
         "服务器尚未配置联系表单。请直接发送邮件联系我们，或在 Vercel 中设置 DATA_HUB_APP_ID、DATA_HUB_API_KEY 后重新部署。",
     },
     footer: {
-      description: "以患者为中心的健康数据基础设施和 AI 工具。健康数据属于患者。",
-      copyright: "© 2025 MyDataHealth Foundation。保留所有权利。",
+      description: "以患者为中心的健康数据基础设施。健康数据属于每个人。",
+      copyright: "© 2026 MyDataHealth Foundation。保留所有权利。",
       github: "GitHub",
       email: "联系我们",
+      platform: "平台",
+      resources: "资源",
+      about: "关于",
+      privacyPolicy: "隐私政策",
+      termsOfUse: "使用条款",
+      platformLinks: {
+        individuals: "个人用户",
+        researchers: "研究人员",
+        organizations: "组织机构",
+      },
+      resourceLinks: {
+        docs: "文档",
+        openSource: "开源",
+        contact: "联系我们",
+      },
+      aboutLinks: {
+        mission: "我们的使命",
+        projects: "项目",
+        join: "加入我们",
+      },
     },
     portal: {
       loginAtApp: "请登录平台以使用本门户。点击下方按钮前往登录。",

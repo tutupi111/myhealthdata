@@ -36,6 +36,8 @@ export default async function ProjectsPage({
             name={project.name}
             description={project.description}
             tag={project.tag}
+            viewProjectLabel={t.projects.viewProject}
+            href={`/${lang}/projects`}
           />
         ))}
       </div>
